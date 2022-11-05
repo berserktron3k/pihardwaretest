@@ -1,16 +1,16 @@
 #!/usr/bin/python
-import irsensors
+import inputs
 
 try:
-    irsensors.top()
-    irsensors.bottom()
+    inputs.top()
+    inputs.bottom()
     while True:
-        if irsensors.top == True:
+        if inputs.top == True:
             print("top sensor tripped")
-            irsensors.top = None # this resets it back to null preventing infinite loop
-        if irsensors.bottom == True:
+            inputs.top = None # this resets it back to null preventing infinite loop
+        if inputs.bottom == True:
             print("bottom sensor tripped")
-            irsensors.bottom = None # this resets it back to null preventing infinite loop
+            inputs.bottom = None # this resets it back to null preventing infinite loop
 
 except KeyboardInterrupt:
     exit()
