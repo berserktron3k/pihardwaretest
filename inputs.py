@@ -34,7 +34,7 @@ def top_left():
     
     GPIO.setmode(GPIO.BCM)
     top_left_pin = 22
-    GPIO.setup(top_left_pin, GPIO.IN, pull_up_down=GPIO.PUD_UP)
+    GPIO.setup(top_left_pin, GPIO.IN, pull_up_down=GPIO.PUD_DOWN)
     GPIO.add_event_detect(top_left_pin, GPIO.RAISING, top_left_cb, bouncetime=1000)
 
 # Function for bottom left button
@@ -46,7 +46,7 @@ def bot_left():
     
     GPIO.setmode(GPIO.BCM)
     bot_left_pin = 23
-    GPIO.setup(bot_left_pin, GPIO.IN, pull_up_down=GPIO.PUD_UP)
+    GPIO.setup(bot_left_pin, GPIO.IN, pull_up_down=GPIO.PUD_DOWN)
     GPIO.add_event_detect(bot_left_pin, GPIO.RAISING, bot_left_cb, bouncetime=1000)
 
 # Function for top right button
@@ -58,7 +58,7 @@ def top_right():
     
     GPIO.setmode(GPIO.BCM)
     top_right_pin = 26
-    GPIO.setup(top_right_pin, GPIO.IN, pull_up_down=GPIO.PUD_UP)
+    GPIO.setup(top_right_pin, GPIO.IN, pull_up_down=GPIO.PUD_DOWN)
     GPIO.add_event_detect(top_right_pin, GPIO.RAISING, top_right_cb, bouncetime=1000)
 
 # Fuction for bottom right button
@@ -70,5 +70,5 @@ def bot_right():
     
     GPIO.setmode(GPIO.BCM)
     bot_right_pin = 16
-    GPIO.setup(bot_right_pin, GPIO.IN, pull_up_down=GPIO.PUD_UP)
+    GPIO.setup(bot_right_pin, GPIO.IN, pull_up_down=GPIO.PUD_DOWN)
     GPIO.add_event_detect(bot_right_pin, GPIO.RAISING, bot_right_cb, bouncetime=1000)
