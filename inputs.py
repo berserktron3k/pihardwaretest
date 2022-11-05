@@ -3,6 +3,7 @@ import RPi.GPIO as GPIO
 
 # Function for top sensor
 def top():
+    
     def top_cb(channel): # defines the callback function for the add_event_detect function
         global top
         top = True
@@ -15,6 +16,7 @@ def top():
 
 # Function for bottom sensor
 def bottom():
+    
     def bot_cb(channel): # defines the callback function for the add_event_detect function
         global bottom
         bottom = True
@@ -27,6 +29,7 @@ def bottom():
     
 # Function for top left button
 def top_left():
+    
     def top_left_cb(channel):
         global top_left
         top_left = True
@@ -35,10 +38,11 @@ def top_left():
     GPIO.setmode(GPIO.BCM)
     top_left_pin = 22
     GPIO.setup(top_left_pin, GPIO.IN, pull_up_down=GPIO.PUD_DOWN)
-    GPIO.add_event_detect(top_left_pin, GPIO.RAISING, top_left_cb, bouncetime=1000)
+    GPIO.add_event_detect(top_left_pin, GPIO.RISING, top_left_cb, bouncetime=1000)
 
 # Function for bottom left button
 def bot_left():
+    
     def bot_left_cb(channel):
         global bot_left
         bot_left = True
@@ -47,22 +51,24 @@ def bot_left():
     GPIO.setmode(GPIO.BCM)
     bot_left_pin = 23
     GPIO.setup(bot_left_pin, GPIO.IN, pull_up_down=GPIO.PUD_DOWN)
-    GPIO.add_event_detect(bot_left_pin, GPIO.RAISING, bot_left_cb, bouncetime=1000)
+    GPIO.add_event_detect(bot_left_pin, GPIO.RISING, bot_left_cb, bouncetime=1000)
 
 # Function for top right button
 def top_right():
+    
     def top_right_cb(channel):
-        global top_roght
+        global top_right
         top_right = True
         return top_right
     
     GPIO.setmode(GPIO.BCM)
     top_right_pin = 26
     GPIO.setup(top_right_pin, GPIO.IN, pull_up_down=GPIO.PUD_DOWN)
-    GPIO.add_event_detect(top_right_pin, GPIO.RAISING, top_right_cb, bouncetime=1000)
+    GPIO.add_event_detect(top_right_pin, GPIO.RISING, top_right_cb, bouncetime=1000)
 
 # Fuction for bottom right button
 def bot_right():
+    
     def bot_right_cb(channel):
         global bot_right
         bot_right = True
@@ -71,4 +77,4 @@ def bot_right():
     GPIO.setmode(GPIO.BCM)
     bot_right_pin = 16
     GPIO.setup(bot_right_pin, GPIO.IN, pull_up_down=GPIO.PUD_DOWN)
-    GPIO.add_event_detect(bot_right_pin, GPIO.RAISING, bot_right_cb, bouncetime=1000)
+    GPIO.add_event_detect(bot_right_pin, GPIO.RISING, bot_right_cb, bouncetime=1000)
