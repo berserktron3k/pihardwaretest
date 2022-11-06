@@ -6,23 +6,26 @@ import pygame
 import sys
 import os
 import glob
+import random
 
 # Variables
 
+audio_absolute_path = os.path.dirname(__file__)
+audio_relative_path = "assets/attractmode/audio"
+audio_full_path = os.path.join(audio_absolute_path, audio_relative_path)
 attract = True
 fps = 60 # Framerate
 ani = 4 # Animaction Cycles
-black = (0, 0, 0)
-audio = glob.glob("./assets/attractmode/audio/*")
+clock = pygame.time.Clock()
+audio = glob.glob(audio_full_path)
 
 # Setup
 
-clock = pygame.time.Clock()
-pygame.mouse.set_visible(False)
 pygame.init()
 pygame.mixer.init()
 pygame.mixer.music.set_volume((0.7))
-pygame.mixer.music.load(audio)
+pygame.mixer.music.load(random.choice(audio))
+pygame.mouse.set_visible(False)
 
 # Attract mode
 try:
@@ -33,8 +36,7 @@ try:
     inputs.bot_left()
     inputs.bot_right()
     while attract:
-        if (inputs.top == True or inputs.bottom == True or inputs.top_left == True or inputs.bot_left == True or inputs.bot_right == True):
-            pygame.quit()
+        if (inputs.top == True or inputs.bottom == True or inputs.top_left == True or inputs.bot_left == True or inputs.bot_right == True>            pygame.quit()
             try:
                 sys.exit()
             finally:
@@ -44,6 +46,6 @@ try:
         pygame.display.flip()
         clock.tick(fps)
         pygame.mixer.music.play()
-
+        
 except KeyboardInterrupt:
     exit()
