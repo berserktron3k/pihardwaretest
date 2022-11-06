@@ -17,7 +17,7 @@ attract = True
 fps = 60 # Framerate
 ani = 4 # Animaction Cycles
 clock = pygame.time.Clock()
-audio = glob.glob(audio_full_path)
+audio = list(glob.glob(audio_full_path))
 
 # Setup
 
