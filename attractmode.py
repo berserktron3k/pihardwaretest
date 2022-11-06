@@ -29,7 +29,13 @@ try:
     inputs.bot_left()
     inputs.bot_right()
     while attract:
-        world = pygame.display.set_mode([world_x,world_y])
+        if (inputs.top == True OR inputs.bottom == True OR inputs.top_left == True OR inputs.bot_left == True OR inputs.bot_right == True)
+            pygame.quit()
+            try:
+                sys.exit()
+            finally:
+                attract = False
+        world = pygame.display.set_mode((0, 0), pygame.FULLSCREEN)
         world.fill(black)
         pygame.display.flip()
         clock.tick(fps)
