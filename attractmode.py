@@ -22,7 +22,8 @@ black = (0, 0, 0)
 pygame.init()
 pygame.mixer.init()
 
-# Attract mode
+# Run attract mode
+
 try:
     inputs.top()
     inputs.bottom()
@@ -42,8 +43,7 @@ try:
         pygame.display.flip()
         clock.tick(fps)
         pygame.mixer.music.load(attract_song)
-        pygame.mixer.music.set_volume(1)
-        pygame.mixer.music.play()
+        pygame.mixer.music.play(1)
 
 except KeyboardInterrupt:
     exit()
