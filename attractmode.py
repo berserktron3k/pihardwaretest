@@ -16,6 +16,7 @@ black = (0, 0, 0)
 # Setup
 
 clock = pygame.time.Clock()
+pygame.mouse.set_visible(False)
 pygame.init()
 
 # Attract mode
