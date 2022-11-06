@@ -24,8 +24,6 @@ black = (0, 0, 0)
 
 pygame.init()
 pygame.mixer.init()
-pygame.mixer.music.set_volume((0.7))
-pygame.mixer.music.load(random.choice(audio))
 
 # Attract mode
 try:
@@ -46,6 +44,8 @@ try:
         pygame.mouse.set_visible(False)
         pygame.display.flip()
         clock.tick(fps)
+        pygame.mixer.music.load(random.choice(audio))
+        pygame.mixer.music.set_volume(1)
         pygame.mixer.music.play()
 
 except KeyboardInterrupt:
