@@ -10,14 +10,11 @@ import random
 
 # Variables
 
-audio_absolute_path = os.path.dirname(__file__)
-audio_relative_path = "assets/attractmode/audio"
-audio_full_path = os.path.join(audio_absolute_path, audio_relative_path, '*.ogg')
 attract = True
 fps = 60 # Framerate
 ani = 4 # Animaction Cycles
 clock = pygame.time.Clock()
-audio = glob.glob(audio_full_path)
+audio = glob.glob("./assets/attractmode/audio/*")
 black = (0, 0, 0)
 
 # Setup
