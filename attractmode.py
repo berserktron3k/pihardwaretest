@@ -36,7 +36,7 @@ try:
     inputs.bot_left()
     inputs.bot_right()
     while attract:
-        if (inputs.top == True or inputs.bottom == True or inputs.top_left == True or inputs.bot_left == True or inputs.bot_right == True>            pygame.quit()
+        if (inputs.top == True or inputs.bottom == True or inputs.top_left == True or inputs.bot_left == True or inputs.bot_right == True):
             try:
                 sys.exit()
             finally:
@@ -46,6 +46,6 @@ try:
         pygame.display.flip()
         clock.tick(fps)
         pygame.mixer.music.play()
-        
+
 except KeyboardInterrupt:
     exit()
