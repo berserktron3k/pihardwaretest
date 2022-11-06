@@ -14,7 +14,7 @@ attract = True
 fps = 60 # Framerate
 ani = 4 # Animaction Cycles
 clock = pygame.time.Clock()
-audio = glob.glob("./assets/attractmode/audio/*")
+attract_song = random.choice(glob.glob("./assets/attractmode/audio/*"))
 black = (0, 0, 0)
 
 # Setup
@@ -41,7 +41,7 @@ try:
         pygame.mouse.set_visible(False)
         pygame.display.flip()
         clock.tick(fps)
-        pygame.mixer.music.load(random.choice(audio))
+        pygame.mixer.music.load(attract_song)
         pygame.mixer.music.set_volume(1)
         pygame.mixer.music.play()
 
