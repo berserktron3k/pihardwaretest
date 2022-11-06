@@ -27,7 +27,7 @@ try:
     inputs.bot_left()
     inputs.bot_right()
     while attract:
-        if (inputs.top == True OR inputs.bottom == True OR inputs.top_left == True OR inputs.bot_left == True OR inputs.bot_right == True):
+        if (inputs.top == True or inputs.bottom == True or inputs.top_left == True or inputs.bot_left == True or inputs.bot_right == True):
             pygame.quit()
             try:
                 sys.exit()
