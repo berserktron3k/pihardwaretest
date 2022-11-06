@@ -25,7 +25,6 @@ pygame.init()
 pygame.mixer.init()
 pygame.mixer.music.set_volume((0.7))
 pygame.mixer.music.load(random.choice(audio))
-pygame.mouse.set_visible(False)
 
 # Attract mode
 try:
@@ -41,8 +40,9 @@ try:
                 sys.exit()
             finally:
                 attract = False
-                world = pygame.display.set_mode((0, 0), pygame.FULLSCREEN)
+        world = pygame.display.set_mode((0, 0), pygame.FULLSCREEN)
         world.fill(black)
+        pygame.mouse.set_visible(False)
         pygame.display.flip()
         clock.tick(fps)
         pygame.mixer.music.play()
