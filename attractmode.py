@@ -37,13 +37,13 @@ try:
                 sys.exit()
             finally:
                 attract = False
-        world = pygame.display.set_mode((0, 0), pygame.FULLSCREEN)
-        world.fill(black)
-        pygame.mouse.set_visible(False)
-        pygame.display.flip()
-        clock.tick(fps)
-        #pygame.mixer.music.load(attract_song)
-        pygame.mixer.music.load('/home/spaghettigallery/SpaghettiGallery/assets/attractmode/audio/Michael.Kiwanuka.Cold.Little.Heart.Full.ogg')
+        #world = pygame.display.set_mode((0, 0), pygame.FULLSCREEN)
+        #world.fill(black)
+        #pygame.mouse.set_visible(False)
+        #pygame.display.flip()
+        #clock.tick(fps)
+        pygame.mixer.music.load(attract_song)
+        #pygame.mixer.music.load('/home/spaghettigallery/SpaghettiGallery/assets/attractmode/audio/Michael.Kiwanuka.Cold.Little.Heart.Full.ogg')
         pygame.mixer.music.play()
 
 except KeyboardInterrupt:
