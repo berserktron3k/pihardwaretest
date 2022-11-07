@@ -42,8 +42,9 @@ try:
         pygame.mouse.set_visible(False)
         pygame.display.flip()
         clock.tick(fps)
-        pygame.mixer.music.load(attract_song)
-        pygame.mixer.music.play(1)
+        pygame.mixer.Channel(0).play(pygame.mixer.Sound(attract_song))
+        #pygame.mixer.music.load(attract_song)
+        #pygame.mixer.music.play()
 
 except KeyboardInterrupt:
     exit()
