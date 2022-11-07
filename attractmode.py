@@ -42,9 +42,9 @@ try:
         pygame.mouse.set_visible(False)
         pygame.display.flip()
         clock.tick(fps)
-        pygame.mixer.Channel(0).play(pygame.mixer.Sound(attract_song))
         #pygame.mixer.music.load(attract_song)
-        #pygame.mixer.music.play()
+        pygame.mixer.music.load('/home/spaghettigallery/SpaghettiGallery/assets/attractmode/audio/Michael.Kiwanuka.Cold.Little.Heart.Full.ogg')
+        pygame.mixer.music.play()
 
 except KeyboardInterrupt:
     exit()
