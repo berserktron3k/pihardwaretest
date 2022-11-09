@@ -66,7 +66,7 @@ def top_right():
         return top_right
     
     GPIO.setmode(GPIO.BCM)
-    top_right_pin = 26
+    top_right_pin = 24
     GPIO.setup(top_right_pin, GPIO.IN, pull_up_down=GPIO.PUD_DOWN)
     GPIO.add_event_detect(top_right_pin, GPIO.RISING, top_right_cb, bouncetime=1000)
     #return GPIO.add_event_detect(top_right_pin, GPIO.RISING, bouncetime=1000)
@@ -80,7 +80,7 @@ def bot_right():
         return bot_right
     
     GPIO.setmode(GPIO.BCM)
-    bot_right_pin = 16
+    bot_right_pin = 25
     GPIO.setup(bot_right_pin, GPIO.IN, pull_up_down=GPIO.PUD_DOWN)
     GPIO.add_event_detect(bot_right_pin, GPIO.RISING, bot_right_cb, bouncetime=1000)
     #return GPIO.add_event_detect(bot_right_pin, GPIO.RISING, bouncetime=1000)
