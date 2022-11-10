@@ -1,27 +1,15 @@
 #!/usr/bin/python
-import topirsensory
-import botirsensor
 import topleftbut
 import toprightbut
 import botleftbut
 import botrightbut
 
 try:
-    topirsensory.top()
-    botirsensor.bottom()
     topleftbut.top_left()
     toprightbut.top_right()
     botleftbut.bot_left()
     botrightbut.bot_right()
     while True:
-        if topirsensory.top == True:
-            print("top sensor tripped")
-            topirsensory.top = None # this resets it back to null preventing infinite loop
-        
-        if botirsensor.bottom == True:
-            print("bottom sensor tripped")
-            botirsensor.bottom = None # this resets it back to null preventing infinite loop
-        
         if topleftbut.top_left == True:
             print("top left button pushed")
             topleftbut.top_left = None
