@@ -8,12 +8,12 @@ top_left_pin = 22
 bot_left_pin = 23
 top_right_pin = 24
 bot_right_pin = 25
-top_sensor = False
-bot_sensor = False
-top_left_button = False
-top_right_button = False
-bot_left_button = False
-bot_right_button = False
+top_sensor = 0
+bot_sensor = 0
+top_left_button = 0
+top_right_button = 0
+bot_left_button = 0
+bot_right_button = 0
 
 # setup GPIO pins
 GPIO.setmode(GPIO.BCM)
@@ -42,7 +42,7 @@ def top_left_button_cb(top_left_pin):
 
 def bot_left_button_cb(bot_left_pin):
     global bot_left_button
-    bot_left_button = GPIO.input(bot_right_pin)
+    bot_left_button = GPIO.input(bot_left_pin)
     return bot_left_button
 
 def top_right_button_cb(top_right_pin):
