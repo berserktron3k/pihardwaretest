@@ -1,31 +1,42 @@
 #!/usr/bin/python
-import inputs_new
+import topirsensory
+import botirsensor
+import topleftbut
+import toprightbut
+import botleftbut
+import botrightbut
 
-print("first we check the current status")
-print(inputs_new.top_sensor)
-print(inputs_new.bot_sensor)
-print(inputs_new.top_left_button)
-print(inputs_new.top_right_button)
-print(inputs_new.bot_left_button)
-print(inputs_new.bot_right_button)
+try:
+    topirsensory.top()
+    botirsensor.bottom()
+    topleftbut.top_left()
+    toprightbut.top_right()
+    botleftbut.bot_left()
+    botrightbut.bot_right()
+    while True:
+        if topirsensory.top == True:
+            print("top sensor tripped")
+            topirsensory.top = None # this resets it back to null preventing infinite loop
+        
+        if botirsensor.bottom == True:
+            print("bottom sensor tripped")
+            botirsensor.bottom = None # this resets it back to null preventing infinite loop
+        
+        if topleftbut.top_left == True:
+            print("top left button pushed")
+            topleftbut.top_left = None
+        
+        if toprightbut.top_right == True:
+            print("top right button pushed")
+            toprightbut.top_right = None
+        
+        if botleftbut.bot_left == True:
+            print("bottom left button pushed")
+            botleftbut.bot_left = None
+        
+        if botrightbut.bot_right == True:
+            print("bottom right button pushed")
+            botrightbut.bot_right = None
 
-print("now we test dynamically")
-while True:
-    if inputs_new.top_sensor == 1:
-        print("top sensor status:")
-        print(inputs_new.top_sensor)
-    if inputs_new.bot_sensor == 1:
-        print("bot sensor status:")
-        print(inputs_new.bot_sensor)
-    if inputs_new.top_left_button == 1:
-        print("top left button status:")
-        print(inputs_new.top_left_button)
-    if inputs_new.top_right_button == 1:
-        print("top right button status:")
-        print(inputs_new.top_right_button)
-    if inputs_new.bot_left_button == 1:
-        print("bot left button status:")
-        print(inputs_new.bot_left_button)
-    if inputs_new.bot_right_button == 1:
-        print("bot right button status:")
-        print(inputs_new.bot_right_button)
+except KeyboardInterrupt:
+    exit()
