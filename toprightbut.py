@@ -10,6 +10,6 @@ def top_right():
         return top_right
     
     GPIO.setmode(GPIO.BCM)
-    top_right_pin = 24
+    top_right_pin = 22
     GPIO.setup(top_right_pin, GPIO.IN, pull_up_down=GPIO.PUD_DOWN)
     GPIO.add_event_detect(top_right_pin, GPIO.RISING, top_right_cb, bouncetime=1000)
