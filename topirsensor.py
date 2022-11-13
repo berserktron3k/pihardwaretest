@@ -12,4 +12,4 @@ def top():
     GPIO.setmode(GPIO.BCM)
     top_pin = 17
     GPIO.setup(top_pin, GPIO.IN, pull_up_down=GPIO.PUD_UP)
-    GPIO.add_event_detect(top_pin, GPIO.FALLING, top_cb, bouncetime=1000)
+    GPIO.add_event_detect(top_pin, GPIO.FALLING, top_cb, bouncetime=3000)
