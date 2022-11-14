@@ -20,7 +20,7 @@ try:
 
         if botirsensor.bottom == True:
             print("bottom ir sensor tripped")
-            botirsensor.bottom() = None
+            botirsensor.bottom = None
 
         if topleftbut.top_left == True:
             print("top left button pushed")

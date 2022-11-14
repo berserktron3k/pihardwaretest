@@ -5,8 +5,9 @@ import RPi.GPIO as GPIO
 def top():
     
     def top_cb(top_pin):
-        global top
-        top = True
+        #global top
+        #top = True
+        top = GPIO.event_detected(top_pin)
         return top
 
     GPIO.setmode(GPIO.BCM)

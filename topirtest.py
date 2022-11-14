@@ -2,7 +2,7 @@
 import topirsensor
 
 try:
-    topirsensor.top_left()
+    topirsensor.top()
     while True:
         if topirsensor.top == True:
             print("top ir sensor tripped")
