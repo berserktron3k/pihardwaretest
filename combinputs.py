@@ -21,27 +21,27 @@ GPIO.setup(bot_right_button, GPIO.IN, pull_up_down=GPIO.PUD_DOWN)
 # define callbacks
 
 def top_ir_cb(top_ir_sensor):
-    top_ir = GPIO.event_detected(top_ir_sensor)
+    top_ir = True
     return top_ir
 
 def bot_ir_cb(bot_ir_sensor):
-    bottom_ir = GPIO.event_detected(bot_ir_sensor)
+    bottom_ir = True
     return bottom_ir
 
 def top_left_cb(top_left_button):
-    top_left = GPIO.event_detected(top_left_button)
+    top_left = True
     return top_left
 
 def top_right_cb(top_right_button):
-    top_right = GPIO.event_detected(top_right_button)
+    top_right = True
     return top_right
 
 def bot_left_cb(bot_left_button):
-    bot_left = GPIO.event_detected(bot_left_button)
+    bot_left = True
     return bot_left
 
-def bot_right_cb(bot_right_pin):
-    bot_right = GPIO.event_detected(bot_right_button)
+def bot_right_cb(bot_right_button):
+    bot_right = True
     return bot_right
 
 # create GPIO event detects
